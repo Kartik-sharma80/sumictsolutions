@@ -1,0 +1,78 @@
+{% extends 'registrationbase.html' %}
+{% load static %}
+{% block body %}
+
+<script>
+    function checkpass()
+    {
+    if(document.signup.pwd.value!=document.signup.cpwd.value)
+    {
+    alert('Password and Repeat Password field does not match');
+    document.signup.cpwd.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+<br>
+<br>
+<br>
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card" style="height:450px">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src= {% static "images/sislogo.png" %} class="brand_logo" alt="Logo">
+			    </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form method="POST" name = "signup" onsubmit="return checkpass();">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-sm-6">
+                            <div class="input-group mb-2">
+                                <input type="text" name="firstname" placeholder="First Name"  class="form-control input_user"  pattern="[A-Za-z]+" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group mb-2">
+                                <input type="text" name="lastname" placeholder="Last Name"  class="form-control input_user"  pattern="[A-Za-z]+">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" name="empcode" placeholder="Employee Code"  class="form-control input_user"  pattern="[0-9]+" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="email" name="email" placeholder="Email ID"  class="form-control input_user"  required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="password" name="pwd" placeholder="Create a Password"  class="form-control input_user"  required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="password" name="cpwd" placeholder="Enter Your Password Again"  class="form-control input_user"  required>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3 login_container">
+						<input type="submit" name="button" class="btn login_btn" value="Submit"></button>
+					</div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-center links">
+                Do you have an account? <a href="/emp_login" class="ml-2">Sign in</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% ifequal error "no" %}
+<script>
+    alert('Signup Successfully');
+    window.location=("/emp_login");
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong,Try Again...');
+</script>
+{% endifequal %}
+{% endblock body %}
