@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+ /* body,
+html,body{
+background-image: url("/static/image/St1.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+*/
+.container{
+height: 100%;
+align-content: center;
+margin-top: auto;
+margin-bottom: auto;
+margin-left: auto;
+margin-Right: auto;
+}
+
+.card{
+height: 400px;
+margin-top: auto;
+margin-bottom: auto;
+margin-left: auto;
+margin-Right: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
