@@ -1,2 +1,0 @@
-# sumictsolutions
-Python + Django +Sqlite
