@@ -11,4 +11,73 @@
             </div>
         </div>
     </div>
+
+
+<div  class="container-fluid" style="width:80%;margin-bottom:5%">
+    <hr><div class="row">
+        <div class="col-md-6">
+            <strong>Employee Code:</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.empcode}}
+        </div>
+    </div><hr>
+    <hr><div class="row">
+        <div class="col-md-6">
+            <strong>Employee Department:</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.empdept}}
+        </div>
+    </div><hr>
+    <hr><div class="row">
+        <div class="col-md-6">
+            <strong>Employee Designation:</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.designation}}
+        </div>
+    </div><hr>
+    <hr><div class="row">
+        <div class="col-md-6">
+            <strong>Employee JoiningDate:</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.joiningdate}}
+        </div>
+    </div><hr>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Email Id :</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.user.username}}
+        </div>
+    </div><hr>
+     <div class="row">
+        <div class="col-md-6">
+            <strong>Contact :</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.contact}}
+        </div>
+     </div><hr>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Date of Birth :</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.dob}}
+        </div>
+    </div><hr>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Address :</strong>
+        </div>
+        <div class="col-md-6">
+            {{employee.address}}
+        </div>
+    </div><hr>
+</div>
+</div>
 {% endblock %}
