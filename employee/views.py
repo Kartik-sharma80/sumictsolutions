@@ -316,7 +316,20 @@ def admin_login(request):
 def admin_home(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    return render(request, 'admin_home.html')
+    employee = EmployeeDetail.objects.all()
+    contact = Contact.objects.all()
+    career = Career.objects.all()
+    total_emp = 0
+    total_contact = 0
+    total_resume = 0
+    for i in employee:
+        total_emp += 1
+    for i in contact:
+        total_contact += 1
+    for i in career:
+        total_resume += 1
+    d = {'total_emp': total_emp, 'total_contact': total_contact, 'total_resume': total_resume}
+    return render(request, 'admin_home.html', d)
 
 
 def change_passwordadmin(request):
